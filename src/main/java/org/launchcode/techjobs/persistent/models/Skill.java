@@ -1,19 +1,25 @@
 package org.launchcode.techjobs.persistent.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.util.*;
 
 @Entity
 public class Skill extends AbstractEntity {
 
-    // new field for description
+    @NotBlank(message = "Description is required")
+    @Size(min = 6, max=100, message= "Name must be between 6 and 100 characters")
     private String description;
 
     @ManyToMany(mappedBy = "skills")
-    private List<Job> jobs = new ArrayList<>();
+    private final List<Job> jobs = new ArrayList<>();
 
-//public accessors for new description field
+
+    public Skill() {
+
+    }
+
     public String getDescription() {
         return description;
     }
@@ -22,16 +28,8 @@ public class Skill extends AbstractEntity {
         this.description = description;
     }
 
-    //no arg constructor
-    public Skill() {
+    public List<Job> getJobs() {
+        return jobs;
     }
-
-//    public List<Job> getJobs() {
-//        return jobs;
-//    }
-//
-//    public void setJobs(List<Job> jobs) {
-//        this.jobs = jobs;
-//    }
 
 }

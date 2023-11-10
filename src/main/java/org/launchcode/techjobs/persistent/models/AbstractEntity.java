@@ -16,24 +16,28 @@ public abstract class AbstractEntity {
     private int id;
 
 
-    @NotBlank  // inherit names, cannot be empty
-    @Size(min = 1 )
+    @NotBlank(message = "Fill in Name.") // inherit names, cannot be empty
+    @Size(min = 1, max = 50 )
     private String name;
 
     public int getId() {
+
         return id;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     @Override
     public String toString() {
+
         return name;
     }
 
