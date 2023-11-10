@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("employers")
-public class EmployerControlle {
+public class EmployerController {
 
     @GetMapping("add")
     public String displayAddEmployerForm(Model model) {
