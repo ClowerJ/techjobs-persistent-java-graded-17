@@ -7,6 +7,8 @@ import java.util.*;
 
 @Entity // mapped to table
 public class Employer extends AbstractEntity {
+    public Employer(){
+    }
 
     @NotBlank  //validation not empty string
     @Size(min = 1)
@@ -24,12 +26,11 @@ public class Employer extends AbstractEntity {
         this.location = location;
     }
 
-    private List<Job> jobs = new ArrayList<>();
+   // private List<Job> jobs = new ArrayList<>();
 
 
     //allows Employer public accessor
-    public Employer() {
-    }
+
 
 
 }

@@ -15,9 +15,9 @@ import java.util.Optional;
 @RequestMapping("employers")
 public class EmployerController {
 
-    //added pirvate field to access EmployerRepository class
+    //added private field to access EmployerRepository class
     @Autowired
-    private employerRepository employerRepository;
+    private EmployerRepository employerRepository;
 
     // added index method utilizing the employer index template
     @GetMapping("")
