@@ -4,15 +4,20 @@ package org.launchcode.techjobs.persistent.models;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.Objects;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+    @Id  //added id and generated value to subclass
+    @GeneratedValue
     private int id;
 
+
+    @NotBlank  // inherit names, cannot be empty
+    @Size(min = 1 )
     private String name;
 
     public int getId() {
