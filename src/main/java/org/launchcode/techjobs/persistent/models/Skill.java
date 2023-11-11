@@ -8,16 +8,20 @@ import java.util.*;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @NotBlank(message = "Description is required")
-    @Size(min = 6, max=100, message= "Name must be between 6 and 100 characters")
+    @ManyToMany(mappedBy = "skills")
+    private List<Job> jobs = new ArrayList<>();
+
     private String description;
 
-    @ManyToMany(mappedBy = "skills")
-    private final List<Job> jobs = new ArrayList<>();
-
-
     public Skill() {
+    }
 
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
     }
 
     public String getDescription() {
@@ -27,9 +31,4 @@ public class Skill extends AbstractEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public List<Job> getJobs() {
-        return jobs;
-    }
-
 }

@@ -8,7 +8,6 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 
 @Controller
@@ -18,7 +17,7 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @GetMapping("")
+    @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("employers", skillRepository.findAll());
         return "skills/index";

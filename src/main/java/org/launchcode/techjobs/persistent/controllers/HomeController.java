@@ -1,17 +1,14 @@
 package org.launchcode.techjobs.persistent.controllers;
 
-import jakarta.validation.Valid;
+import jakarta.validation.*;
 import org.launchcode.techjobs.persistent.models.*;
 import org.launchcode.techjobs.persistent.models.data.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
+import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
-
-
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Created by LaunchCode
